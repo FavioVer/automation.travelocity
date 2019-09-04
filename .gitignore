@@ -1,5 +1,21 @@
-.metadata
-.target
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Ide generated files
 .classpath
 .project
+/target/
 .settings/
+.metadata/
+.idea/
+
+META-INF
+build.properties
+products.xlsx
+ExcelToJson.java
+api-test/generated_products.json
+
