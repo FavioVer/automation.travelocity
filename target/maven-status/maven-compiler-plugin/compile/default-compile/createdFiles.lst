@@ -1,8 +1,0 @@
-com\travelocity\framework\datamanagement\UsersDataProvider.class
-com\travelocity\framework\datamanagement\EnvironmentProvider.class
-com\travelocity\framework\datamanagement\ExecutionPropertiesProvider.class
-com\travelocity\framework\utils\DateTimeUtils.class
-com\travelocity\framework\utils\WebDriverUtils.class
-com\travelocity\framework\webdriver\Context.class
-com\travelocity\framework\webdriver\WebdriverConfig.class
-com\travelocity\framework\webdriver\WebDriverFactory.class
