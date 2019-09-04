@@ -1,18 +1,18 @@
-package com.travelocity.framework.utils;
+package com.travelocity.framework.datamanagement;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class AutomationProperties {
+public class ExecutionPropertiesProvider {
 
 	private static Properties properties;
 
 	private static Properties getInstance() throws Exception {
 		if (properties == null) {
 			properties = new Properties();
-			InputStream input = AutomationProperties.class.getClassLoader()
+			InputStream input = ExecutionPropertiesProvider.class.getClassLoader()
 					.getResourceAsStream("automation.properties");
 			try {
 				properties.load(input);

@@ -21,7 +21,7 @@
 	</style>
 </head>
 
-	<body class='extent standard default hide-overflow bdd-report'>
+	<body class='extent standard default hide-overflow '>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
 		</div>
@@ -47,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 3, 2019 07:43:05 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 4, 2019 08:43:22 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,8 +72,7 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li class='divider'></li>
+										<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
 			</div>
@@ -85,7 +84,7 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@BaseBooking</a></li>
+					<li><a href='#'>@Login</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -126,197 +125,49 @@
 
 <div id='test-view-charts' class='subview-full'>
 	<div id='charts-row' class='row nm-v nm-h'>
-		<div class='col s12 m4 l4 np-h'>
+		<div class='col s12 m6 l6 np-h'>
 			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Features</div>
+				<div class='left panel-name'>Tests</div>
 				<div class='chart-box'>
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
 		
-		<div class='col s12 m4 l4 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Scenarios</div>
-				<div class='chart-box'>
-					<canvas id='child-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> scenario(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
-				</div>
-			</div>
-		</div>
 		
-		<div class='col s12 m4 l4 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Steps</div>
-				<div class='chart-box'>
-					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>19</span> step(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
 	<div class='subview-left left'>
 		
 		<div class='view-summary'>
-			<h5>Features</h5>
+			<h5>Tests</h5>
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Base Booking</span>
-						<span class='test-time'>Sep 3, 2019 07:43:06 PM</span>
+						<span class='test-name'>Login</span>
+						<span class='test-time'>Sep 4, 2019 08:43:22 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 54s+557ms</span>
-	<div class='desc'>
-		<b>ScenarioOutline</b>
-		<span class="desc-text">Validate sum of two numbers</span>
-	</div>
-	<ul class='steps'>
-		<li test-id='3' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@BaseBooking</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Validate sum of two numbers</span>
-			
-				<ul class='steps'>
-					<li test-id='4' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I select the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='5' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I go to the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='6' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then I should not be logged in</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='7' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I have a 1</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='8' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I have another 2</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='9' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I add the two numbers</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='10' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then the result of the sum is 3</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-	</ul>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 4, 2019 08:43:22 PM</span>
+	<span class='label end-time'>Sep 4, 2019 08:43:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
-<div class='scenariooutline node' test-id='11' status='pass'>
-	<span class='duration right label'>0h 1m 16s+800ms</span>
-	<div class='desc'>
-		<b>ScenarioOutline</b>
-		<span class="desc-text">Validate the substraction between numbers</span>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Login</span>
+			</div>
 	</div>
-	<ul class='steps'>
-		<li test-id='12' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@BaseBooking</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Validate the substraction between numbers</span>
-			
-				<ul class='steps'>
-					<li test-id='13' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I select the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='14' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I go to the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='15' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then I should not be logged in</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='16' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I have a 5</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='17' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I substract a 1</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='18' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then the result of the substraction is 4</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='19' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@BaseBooking</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Validate the substraction between numbers</span>
-			
-				<ul class='steps'>
-					<li test-id='20' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I select the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='21' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I go to the url of the Travelocity Home page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='22' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then I should not be logged in</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='23' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given I have a 3</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='24' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I substract a 10</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='25' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then the result of the substraction is -7</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-	</ul>
-</div>
 					</div>
 				</li>
 			</ul>
@@ -371,14 +222,14 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@BaseBooking</span>
+						<span class='category-name'>@Login</span>
 						<span class='category-status right'>
-							<span class='label pass'>4</span>
+							<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 4</span>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
 						</div>
@@ -394,23 +245,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 3, 2019 07:43:06 PM</td>
-										<td class='linked' test-id='1'>Base Booking</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Sep 3, 2019 07:43:06 PM</td>
-										<td class='linked' test-id='3'>Base Booking.Validate sum of two numbers.Validate sum of two numbers</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Sep 3, 2019 07:44:03 PM</td>
-										<td class='linked' test-id='12'>Base Booking.Validate the substraction between numbers.Validate the substraction between numbers</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Sep 3, 2019 07:44:42 PM</td>
-										<td class='linked' test-id='19'>Base Booking.Validate the substraction between numbers.Validate the substraction between numbers</td>
+										<td>Sep 4, 2019 08:43:22 PM</td>
+										<td class='linked' test-id='1'>Login</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -438,38 +274,32 @@
 		<div class='row'>
 			<div class='col s2'>
 				<div class='card-panel r'>
-					Features
+					Tests
 					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
-					Scenarios
-					<div class='panel-lead'>3</div>
-				</div>
-			</div>
-			<div class='col s2'>
-				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>19</div>
+					<div class='panel-lead'>0</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 3, 2019 07:43:05 PM</div>
+					<div class='panel-lead'>Sep 4, 2019 08:43:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 3, 2019 07:45:23 PM</div>
+			 		<div class='panel-lead'>Sep 4, 2019 08:43:29 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>137,443ms</div>
+					<div class='panel-lead'>7,538ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -485,8 +315,8 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@BaseBooking</td>
-							<td>4</td>
+							<td>@Login</td>
+							<td>1</td>
 							<td>0</td>
 							<td>0</td>
 							<td>
@@ -514,7 +344,7 @@
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 3,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
@@ -523,7 +353,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 19,
+				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

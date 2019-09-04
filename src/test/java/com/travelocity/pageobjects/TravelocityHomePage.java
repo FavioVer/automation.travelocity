@@ -1,6 +1,7 @@
 package com.travelocity.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,12 @@ public class TravelocityHomePage extends PageObjectBase {
     }
 
     public boolean someUserIsLoggedInApp() {
-        return getWebDriverUtils().waitForElementToBeVisible(accountMenuButtonSignedButton);
+    	try {
+    		return getWebDriverUtils().waitForElementToBeVisible(accountMenuButtonSignedButton);
+    	}catch (TimeoutException e) {
+			return false;
+		}
+        
     }
 
     public void signOutAccount() {

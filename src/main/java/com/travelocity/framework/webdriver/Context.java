@@ -6,12 +6,12 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 
-import com.travelocity.framework.tdm.EnvironmentProvider;
-import com.travelocity.framework.utils.AutomationProperties;
+import com.travelocity.framework.datamanagement.EnvironmentProvider;
+import com.travelocity.framework.datamanagement.ExecutionPropertiesProvider;
 
 public class Context {
 
-    private String ENVIRONMENT = AutomationProperties.getString("environment").replaceAll(" ", "");
+    private String ENVIRONMENT = ExecutionPropertiesProvider.getString("environment").replaceAll(" ", "");
 
     private static Context instance;
 

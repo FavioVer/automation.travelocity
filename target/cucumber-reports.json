@@ -3,55 +3,10 @@
     "line": 2,
     "elements": [
       {
-        "line": 4,
-        "name": "User should not be logged in to Travelocity",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 229608400,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I select the url of the Travelocity Home page",
-            "match": {
-              "location": "BackgroundStepsDefinitions.getUrlOfTravelocityHomePage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 23091163400,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I go to the url of the Travelocity Home page",
-            "match": {
-              "location": "BackgroundStepsDefinitions.goToUrlOfTravelocityHomePage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 20492588099,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "I should not be logged in",
-            "match": {
-              "location": "BackgroundStepsDefinitions.secureThatNoUserIsLoggedInToTravelocity()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
         "before": [
           {
             "result": {
-              "duration": 10655337301,
+              "duration": 7063127900,
               "status": "passed"
             },
             "match": {
@@ -59,409 +14,43 @@
             }
           }
         ],
-        "line": 18,
-        "name": "Validate sum of two numbers",
-        "description": "",
-        "id": "base-booking;validate-sum-of-two-numbers;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 3219990700,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 21356501,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I have a 1",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 9
-                }
-              ],
-              "location": "BaseStepDefinition.getFirstNumber(int)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 702601,
-              "status": "passed"
-            },
-            "line": 11,
-            "name": "I have another 2",
-            "match": {
-              "arguments": [
-                {
-                  "val": "2",
-                  "offset": 15
-                }
-              ],
-              "location": "BaseStepDefinition.getSecondNumber(int)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 434800,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "I add the two numbers",
-            "match": {
-              "location": "BaseStepDefinition.addTwoNumbers()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 6141600,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "the result of the sum is 3",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 25
-                }
-              ],
-              "location": "BaseStepDefinition.validateSum(int)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 1,
-            "name": "@BaseBooking"
-          }
-        ]
-      },
-      {
         "line": 4,
-        "name": "User should not be logged in to Travelocity",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
+        "name": "",
+        "description": "User that is not logged into Travelocity should not be able to see the profile icon",
+        "id": "login;",
+        "type": "scenario",
+        "keyword": "Scenario",
         "steps": [
           {
-            "result": {
-              "duration": 323400,
-              "status": "passed"
-            },
-            "line": 5,
+            "line": 6,
             "name": "I select the url of the Travelocity Home page",
             "match": {
-              "location": "BackgroundStepsDefinitions.getUrlOfTravelocityHomePage()"
+              "location": "BasicStepsDefinitions.getUrlOfTravelocityHomePage()"
             },
             "keyword": "Given "
           },
           {
-            "result": {
-              "duration": 8764666701,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "I go to the url of the Travelocity Home page",
-            "match": {
-              "location": "BackgroundStepsDefinitions.goToUrlOfTravelocityHomePage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 20079482100,
-              "status": "passed"
-            },
             "line": 7,
-            "name": "I should not be logged in",
-            "match": {
-              "location": "BackgroundStepsDefinitions.secureThatNoUserIsLoggedInToTravelocity()"
-            },
-            "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7226969100,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.tearUp(Scenario)"
-            }
-          }
-        ],
-        "line": 28,
-        "name": "Validate the substraction between numbers",
-        "description": "",
-        "id": "base-booking;validate-the-substraction-between-numbers;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 2606413101,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 508999,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I have a 5",
-            "match": {
-              "arguments": [
-                {
-                  "val": "5",
-                  "offset": 9
-                }
-              ],
-              "location": "BaseStepDefinition.getFirstNumber(int)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 744300,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I substract a 1",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1",
-                  "offset": 14
-                }
-              ],
-              "location": "BaseStepDefinition.substractTwoNumbers(int)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 686900,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "the result of the substraction is 4",
-            "match": {
-              "arguments": [
-                {
-                  "val": "4",
-                  "offset": 34
-                }
-              ],
-              "location": "BaseStepDefinition.validateSubstraction(int)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 1,
-            "name": "@BaseBooking"
-          }
-        ]
-      },
-      {
-        "line": 4,
-        "name": "User should not be logged in to Travelocity",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 319300,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I select the url of the Travelocity Home page",
-            "match": {
-              "location": "BackgroundStepsDefinitions.getUrlOfTravelocityHomePage()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 10962512901,
-              "status": "passed"
-            },
-            "line": 6,
             "name": "I go to the url of the Travelocity Home page",
-            "match": {
-              "location": "BackgroundStepsDefinitions.goToUrlOfTravelocityHomePage()"
-            },
             "keyword": "When "
           },
           {
-            "result": {
-              "duration": 20082224001,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "I should not be logged in",
-            "match": {
-              "location": "BackgroundStepsDefinitions.secureThatNoUserIsLoggedInToTravelocity()"
-            },
+            "line": 8,
+            "name": "I should not be able to see the profile icon",
             "keyword": "Then "
-          }
-        ]
-      },
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 7073805701,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.tearUp(Scenario)"
-            }
-          }
-        ],
-        "line": 29,
-        "name": "Validate the substraction between numbers",
-        "description": "",
-        "id": "base-booking;validate-the-substraction-between-numbers;;3",
-        "after": [
-          {
-            "result": {
-              "duration": 2511782400,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.tearDown(Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 719001,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "I have a 3",
-            "match": {
-              "arguments": [
-                {
-                  "val": "3",
-                  "offset": 9
-                }
-              ],
-              "location": "BaseStepDefinition.getFirstNumber(int)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 519800,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "I substract a 10",
-            "match": {
-              "arguments": [
-                {
-                  "val": "10",
-                  "offset": 14
-                }
-              ],
-              "location": "BaseStepDefinition.substractTwoNumbers(int)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 398200,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "the result of the substraction is -7",
-            "match": {
-              "arguments": [
-                {
-                  "val": "-7",
-                  "offset": 34
-                }
-              ],
-              "location": "BaseStepDefinition.validateSubstraction(int)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 1,
-            "name": "@BaseBooking"
           }
         ]
       }
     ],
-    "name": "Base Booking",
+    "name": "Login",
     "description": "",
-    "id": "base-booking",
+    "id": "login",
     "keyword": "Feature",
     "uri": "Booking.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@BaseBooking"
+        "name": "@Login"
       }
     ]
   }

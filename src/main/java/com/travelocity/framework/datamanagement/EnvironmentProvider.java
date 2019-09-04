@@ -1,4 +1,4 @@
-package com.travelocity.framework.tdm;
+package com.travelocity.framework.datamanagement;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,26 +15,26 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class EnvironmentProvider {
 
-    public static final String FILE_PATH = "environments.xlsx";
+	public static final String FILE_PATH = "environments.xlsx";
 
-    private static String[] urls = new String[100];
+	private static String[] urls = new String[100];
 
-    public static void setData() throws EncryptedDocumentException, InvalidFormatException, IOException {
-	int i = 0;
-	Workbook workbook = WorkbookFactory.create(new File(FILE_PATH));
-	Sheet sheet = workbook.getSheetAt(0);
-	DataFormatter dataFormatter = new DataFormatter();
-	Iterator<Row> rowIterator = sheet.rowIterator();
-	while (rowIterator.hasNext()) {
-	    Row row = rowIterator.next();
-	    Iterator<Cell> cellIterator = row.cellIterator();
-	    while (cellIterator.hasNext()) {
-		Cell cell = cellIterator.next();
-		urls[i] = dataFormatter.formatCellValue(cell);
-		i++;
-	    }
+	public static void setData() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		int i = 0;
+		Workbook workbook = WorkbookFactory.create(new File(FILE_PATH));
+		Sheet sheet = workbook.getSheetAt(0);
+		DataFormatter dataFormatter = new DataFormatter();
+		Iterator<Row> rowIterator = sheet.rowIterator();
+		while (rowIterator.hasNext()) {
+			Row row = rowIterator.next();
+			Iterator<Cell> cellIterator = row.cellIterator();
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+				urls[i] = dataFormatter.formatCellValue(cell);
+				i++;
+			}
+		}
 	}
-    }
 
     public static String getUrl(String description)
 	    throws EncryptedDocumentException, InvalidFormatException, IOException {

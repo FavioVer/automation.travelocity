@@ -19,13 +19,13 @@ import io.qameta.allure.Story;
 
 
 
-public class BackgroundStepsDefinitions {
+public class BasicStepsDefinitions {
 
     private WebDriver driver;
     static String app = "";
     private TravelocityHomePage travelocityHomePage;
 
-    public BackgroundStepsDefinitions() {
+    public BasicStepsDefinitions() {
         this.driver = Hooks.getwebDriver();
     }
 
@@ -42,9 +42,9 @@ public class BackgroundStepsDefinitions {
         travelocityHomePage = new TravelocityHomePage(driver);
     }
 
-    @Story("User should not be logged in to Travelocity")
-    @Step("I should not be logged in")
-    @Then("^I should not be logged in$")
+    @Story("I should not be able to see the profile icon")
+    @Step("I should not be able to see the profile icon")
+    @Then("^I should not be able to see the profile icon$")
     public void secureThatNoUserIsLoggedInToTravelocity() {
         if(travelocityHomePage.someUserIsLoggedInApp()) {
             travelocityHomePage.signOutAccount();

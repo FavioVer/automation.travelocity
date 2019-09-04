@@ -1,5 +1,6 @@
-com\travelocity\framework\tdm\EnvironmentProvider.class
-com\travelocity\framework\utils\AutomationProperties.class
+com\travelocity\framework\datamanagement\UsersDataProvider.class
+com\travelocity\framework\datamanagement\EnvironmentProvider.class
+com\travelocity\framework\datamanagement\ExecutionPropertiesProvider.class
 com\travelocity\framework\utils\DateTimeUtils.class
 com\travelocity\framework\utils\WebDriverUtils.class
 com\travelocity\framework\webdriver\Context.class

@@ -7,7 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
         glue = { "com.travelocity.stepDefinitions" },
 
-        tags = { "@BaseBooking" },
+        tags = { "@Login" },
 
         plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
                 "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
