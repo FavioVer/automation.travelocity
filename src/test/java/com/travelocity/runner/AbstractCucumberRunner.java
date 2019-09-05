@@ -9,8 +9,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
         tags = { "@Login" },
 
-        plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
-                "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
+        plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports" },
 
         monochrome = true)
 

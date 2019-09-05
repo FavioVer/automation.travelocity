@@ -10,7 +10,7 @@
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<aspectj.version>1.8.10</aspectj.version>
+		<aspectj.version>1.9.4</aspectj.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
@@ -40,7 +40,7 @@
 			<artifactId>owner-java8</artifactId>
 			<version>1.0.6</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -58,18 +58,18 @@
 			<version>1.2.5</version>
 			<scope>compile</scope>
 		</dependency>
-		
-		<dependency>
-			<groupId>com.vimalselvam</groupId>
-			<artifactId>cucumber-extentsreport</artifactId>
-			<version>3.0.2</version>
-		</dependency>
 
-		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports</artifactId>
-			<version>3.1.2</version>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.vimalselvam</groupId> -->
+		<!-- <artifactId>cucumber-extentsreport</artifactId> -->
+		<!-- <version>3.0.2</version> -->
+		<!-- </dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>com.aventstack</groupId> -->
+		<!-- <artifactId>extentreports</artifactId> -->
+		<!-- <version>4.0.6</version> -->
+		<!-- </dependency> -->
 
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
@@ -100,9 +100,19 @@
 		</dependency>
 
 		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>2.3.0</version>
+			<version>2.4.0-b180725.0427</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.4.0-b180725.0644</version>
 		</dependency>
 
 	</dependencies>
@@ -112,28 +122,54 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M3</version>
+				<version>2.22.0</version>
 				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>src\test\java\com\travelocity\baseSuite.xml</suiteXmlFile>
-					</suiteXmlFiles>
 					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+						--illegal-access=permit
 					</argLine>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjweaver</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.0</version>
+				<configuration>
+					<argLine>
+						--illegal-access=permit
+					</argLine>
+				</configuration>
+			</plugin>
+
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-surefire-plugin</artifactId> -->
+			<!-- <version>3.0.0-M3</version> -->
+			<!-- <configuration> -->
+			<!-- <suiteXmlFiles> -->
+			<!-- <suiteXmlFile>src\test\java\com\travelocity\baseSuite.xml</suiteXmlFile> -->
+			<!-- </suiteXmlFiles> -->
+			<!-- <argLine> -->
+			<!-- -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" -->
+			<!-- </argLine> -->
+			<!-- </configuration> -->
+			<!-- <dependencies> -->
+			<!-- <dependency> -->
+			<!-- <groupId>org.aspectj</groupId> -->
+			<!-- <artifactId>aspectjweaver</artifactId> -->
+			<!-- <version>${aspectj.version}</version> -->
+			<!-- </dependency> -->
+			<!-- </dependencies> -->
+			<!-- </plugin> -->
 		</plugins>
 	</build>
 

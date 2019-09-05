@@ -42,10 +42,10 @@ public class BasicStepsDefinitions {
         travelocityHomePage = new TravelocityHomePage(driver);
     }
 
-    @Story("I should not be able to see the profile icon")
-    @Step("I should not be able to see the profile icon")
-    @Then("^I should not be able to see the profile icon$")
-    public void secureThatNoUserIsLoggedInToTravelocity() {
+    @Story("I should be able to see the login option")
+    @Step("I should be able to see the login option")
+    @Then("^I should be able to see the login option$")
+    public void secureThatUserCanSeeLogInOption() {
         if(travelocityHomePage.someUserIsLoggedInApp()) {
             travelocityHomePage.signOutAccount();
         }

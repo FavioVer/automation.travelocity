@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.travelocity.runner.CustomizedCucumberRunner">
+      <class name="com.travelocity.runner.AbstractCucumberRunner">
         <methods>
-          <include name="tearDownClass"/>
-          <include name="feature" invocation-numbers="0"/>
           <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.travelocity.runner.CustomizedCucumberRunner -->
+      </class> <!-- com.travelocity.runner.AbstractCucumberRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
