@@ -1,5 +1,5 @@
-@Login 
-Feature: Login 
+@HomePage
+Feature: Home Page 
 
 Scenario:
 User that is not logged into Travelocity should be able to see the login option
