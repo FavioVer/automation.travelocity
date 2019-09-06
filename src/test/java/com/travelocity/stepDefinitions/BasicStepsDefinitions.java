@@ -41,6 +41,14 @@ public class BasicStepsDefinitions {
 		if (travelocityHomePage.someUserIsLoggedInApp()) {
 			travelocityHomePage.signOutAccount();
 		}
-		Assert.assertFalse("User has not been logged out succesfully", travelocityHomePage.someUserIsLoggedInApp());
+		Assert.assertFalse("User cannot see the login option", travelocityHomePage.someUserIsLoggedInApp());
+	}
+	
+	@Then("^I should not be able to see the login option$")
+	public void secureThatUserCannotSeeLogInOption() {
+		if (travelocityHomePage.someUserIsLoggedInApp()) {
+			travelocityHomePage.signOutAccount();
+		}
+		Assert.assertTrue("User can actually see the login option", travelocityHomePage.someUserIsLoggedInApp());
 	}
 }
