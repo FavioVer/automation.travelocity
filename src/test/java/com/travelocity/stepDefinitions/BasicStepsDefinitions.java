@@ -11,9 +11,9 @@ import com.travelocity.constants.AppNames;
 import com.travelocity.framework.webdriver.Context;
 import com.travelocity.pageobjects.TravelocityHomePage;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class BasicStepsDefinitions {
 

@@ -18,4 +18,5 @@ build.properties
 products.xlsx
 ExcelToJson.java
 api-test/generated_products.json
+/allure-results/
 

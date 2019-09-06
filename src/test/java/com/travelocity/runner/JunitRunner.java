@@ -1,19 +1,20 @@
 package com.travelocity.runner;
 
 import org.junit.runner.RunWith;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/resources/features" },
 
-        glue = { "com.travelocity.stepDefinitions" },
+		glue = { "com.travelocity.stepDefinitions" },
 
-        tags = { "@HomePage" },
+		tags = { "@HomePage" },
 
-        plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports" },
+		plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
+				"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm" },
 
-        monochrome = true)
+		monochrome = true)
 
 public class JunitRunner {
 
