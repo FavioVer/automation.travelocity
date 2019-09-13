@@ -38,7 +38,7 @@ public class BasicStepsDefinitions {
 		travelocityHomePage = new TravelocityHomePage(driver);
 	}
 	
-	@Then("^I should be able to see the account menu$")
+	@Then("^I should be able to see the account menu for not logged users$")
 	public void verifyUserCanSeeAccountMenuForNotLoggedUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
 		Assert.assertTrue("User cannot see the account menu option for the not logged users", travelocityHomePage.isAccountMenuButtonVisible());
 	}
