@@ -39,11 +39,8 @@ public class BasicStepsDefinitions {
 	}
 
 	@Then("^I should be able to see the login option$")
-	public void secureThatUserCanSeeLogInOption() {
-		if (travelocityHomePage.someUserIsLoggedInApp()) {
-			travelocityHomePage.signOutAccount();
-		}
-		Assert.assertFalse("User cannot see the login option", travelocityHomePage.someUserIsLoggedInApp());
+	public void verifyUserCanSeeTheLoginOption() {
+		Assert.assertTrue("User cannot see the login option", travelocityHomePage.isAccountMenuButtonVisible());
 	}
 
 	@And("^enter a username as \"([^\\\"]*)\" on the user field$")
@@ -56,12 +53,21 @@ public class BasicStepsDefinitions {
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 		Assert.assertTrue("User was not entered correctly", StringUtils.isNotBlank(password));
 	}
+	
+	@And("^I click on the available option to login$")
+	public void enterPasswordAs()
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		
+	}
 
 	@Then("^I should not be able to see the login option$")
+	public void verifyUserCanotSeeTheLoginOption() {
+		Assert.assertFalse("User can actually see the login option", travelocityHomePage.isAccountMenuButtonVisible());
+	}
+	
+	
+	@Then("^I should be able to see the account menu option for my logged user$")
 	public void secureThatUserCannotSeeLogInOption() {
-		if (travelocityHomePage.someUserIsLoggedInApp()) {
-			travelocityHomePage.signOutAccount();
-		}
-		Assert.assertTrue("User can actually see the login option", travelocityHomePage.someUserIsLoggedInApp());
+		Assert.assertTrue("User can actually see account menu for their logged user", travelocityHomePage.isAccountMenuButtonForLoggedUserVisible());
 	}
 }
