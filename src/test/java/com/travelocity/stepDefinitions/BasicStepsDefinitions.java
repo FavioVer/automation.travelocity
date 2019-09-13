@@ -38,11 +38,6 @@ public class BasicStepsDefinitions {
 		travelocityHomePage = new TravelocityHomePage(driver);
 	}
 
-	@Then("^I should be able to see the login option$")
-	public void verifyUserCanSeeTheLoginOption() {
-		Assert.assertTrue("User cannot see the login option", travelocityHomePage.isAccountMenuButtonVisible());
-	}
-
 	@And("^enter a username as \"([^\\\"]*)\" on the user field$")
 	public void enterUsernameAs(String user) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		Assert.assertTrue("User was not entered correctly", StringUtils.isNotBlank(user));
@@ -59,12 +54,6 @@ public class BasicStepsDefinitions {
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 		
 	}
-
-	@Then("^I should not be able to see the login option$")
-	public void verifyUserCanotSeeTheLoginOption() {
-		Assert.assertFalse("User can actually see the login option", travelocityHomePage.isAccountMenuButtonVisible());
-	}
-	
 	
 	@Then("^I should be able to see the account menu option for my logged user$")
 	public void secureThatUserCannotSeeLogInOption() {
