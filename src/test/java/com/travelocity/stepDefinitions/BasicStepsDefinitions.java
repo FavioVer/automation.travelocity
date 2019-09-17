@@ -80,7 +80,7 @@ public class BasicStepsDefinitions {
 
 	@Then("^I should be able to see the account menu option for my logged user$")
 	public void verifyUserCanSeeAccountMenuForLoggedUser() {
-		Assert.assertTrue("User can not see account menu for their logged user",
+		Assert.assertTrue("User can not see the account menu for their logged user",
 				travelocityHomePage.isAccountMenuButtonForLoggedUserVisible());
 	}
 }
