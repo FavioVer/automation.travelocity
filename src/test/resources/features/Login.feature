@@ -1,7 +1,7 @@
 @Login 
 Feature: Login 
 
-Scenario Outline: A user that is not logged into Travelocity should be able to see the login option 
+Scenario Outline: A registered user should be able to login to Travelocity with valid user and valid password
 	Given I am on the Travelocity Home page 
 	And I click on the account menu for not logged users
 	And click on the available option to log in from the account menu
