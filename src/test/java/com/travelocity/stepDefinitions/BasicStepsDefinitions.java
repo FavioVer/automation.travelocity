@@ -12,7 +12,6 @@ import com.travelocity.constants.AppNames;
 import com.travelocity.framework.webdriver.Context;
 import com.travelocity.pageobjects.TravelocityHomePage;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,43 +25,62 @@ public class BasicStepsDefinitions {
 	public BasicStepsDefinitions() {
 		this.driver = Hooks.getwebDriver();
 	}
-
-	@Given("^I select the url of the Travelocity Home page$")
-	public void getUrlOfTravelocityHomePage() {
+	
+	public void getUrlOfTravelocityHomePage(){
 		app = AppNames.TRAVELOCITY_HOME_NAME;
 	}
 
-	@When("^I go to the url of the Travelocity Home page$")
-	public void goToUrlOfTravelocityHomePage() throws EncryptedDocumentException, InvalidFormatException, IOException {
+	@Given("^I am on the Travelocity Home page$")
+	public void goToTravelocityHomePage() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		getUrlOfTravelocityHomePage();
 		Context.initializePageInstance(driver, app);
 		travelocityHomePage = new TravelocityHomePage(driver);
 	}
 	
-	@Then("^I should be able to see the account menu for not logged users$")
-	public void verifyUserCanSeeAccountMenuForNotLoggedUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		Assert.assertTrue("User cannot see the account menu option for the not logged users", travelocityHomePage.isAccountMenuButtonVisible());
+	@Given("^I am not logged into Travelocity$")
+	public void getNotLoggedUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
 	}
 	
+	@When("^I click on the account menu for not logged users$")
+	public void clickOnTheAccountMenuForNotLoggedUsers()
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		Assert.assertTrue("User cannot see the account menu option for the not logged users",
+				travelocityHomePage.isAccountMenuButtonVisible());
+	}
 
-	@And("^enter a username as \"([^\\\"]*)\" on the user field$")
+	@Then("^I should be able to see the create account option$")
+	public void verifyUserCanSeeCreateAccountOption()
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		Assert.assertTrue("User cannot see the option to create an account",
+				travelocityHomePage.isAccountMenuButtonVisible());
+	}
+
+	@When("^click on the available option to log in from the account menu$")
+	public void selectAvailableLogInOptionFromAccountMenu() throws EncryptedDocumentException, InvalidFormatException, IOException {
+
+	}
+	
+	@When("^enter a username as \"([^\\\"]*)\" on the user field$")
 	public void enterUsernameAs(String user) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		Assert.assertTrue("User was not entered correctly", StringUtils.isNotBlank(user));
 	}
+	
 
-	@And("^enter a password as \"([^\\\"]*)\" on the password field$")
+	@When("^enter a password as \"([^\\\"]*)\" on the password field$")
 	public void enterPasswordAs(String password)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
 		Assert.assertTrue("User was not entered correctly", StringUtils.isNotBlank(password));
 	}
+
 	
-	@And("^I click on the available option to login$")
-	public void enterPasswordAs()
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
-		
+	@When("^I click on the login option$")
+	public void clickOnTheLoginOption() throws EncryptedDocumentException, InvalidFormatException, IOException {
+
 	}
-	
+
 	@Then("^I should be able to see the account menu option for my logged user$")
 	public void verifyUserCanSeeAccountMenuForLoggedUser() {
-		Assert.assertTrue("User can actually see account menu for their logged user", travelocityHomePage.isAccountMenuButtonForLoggedUserVisible());
+		Assert.assertTrue("User can actually see account menu for their logged user",
+				travelocityHomePage.isAccountMenuButtonForLoggedUserVisible());
 	}
 }

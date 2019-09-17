@@ -2,13 +2,12 @@
 Feature: Login 
 
 Scenario Outline: A user that is not logged into Travelocity should be able to see the login option 
-	Given I select the url of the Travelocity Home page 
-	When I go to the url of the Travelocity Home page 
-	And click on the menu option to diplay the login option
-	And click on the option to log in 
+	Given I am on the Travelocity Home page 
+	And I click on the account menu for not logged users
+	And click on the available option to log in from the account menu
 	And enter a username as <user> on the user field 
 	And enter a password as <password> on the password field 
-	And I click on the available option to login
+	And I click on the login option
 	Then I should be able to see the account menu option for my logged user
 	
 	Examples: 
