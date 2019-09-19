@@ -12,8 +12,8 @@ Scenario Outline: A registered user should be able to login to Travelocity with 
 	
 	Examples: 
 	
-		|user   |password |
-		|"user1"| "pass1" |
-		|"user2"| "pass2" |
+		|user        |password      |
+		|"validUser1"| "validPass1" |
+		|"validUser2"| "validPass2" |
 		
 		
