@@ -37,7 +37,7 @@ public class BasicStepsDefinitions {
 		travelocityHomePage = new TravelocityHomePage(driver);
 	}
 	
-	@Given("^I am not logged into Travelocity$")
+	@Given("^I am not logged in Travelocity$")
 	public void getNotLoggedUser() throws EncryptedDocumentException, InvalidFormatException, IOException {
 	}
 	
