@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Sep 19 14:01:56 ART 2019","Thu Sep 19 14:02:33 ART 2019","37499","","Home Page","","A user that is not logged into Travelocity should be able to see the login option","","A user that is not logged into Travelocity should be able to see the login option",""
+"failed","Thu Sep 19 14:03:15 ART 2019","Thu Sep 19 14:03:58 ART 2019","42285","","Login","","A registered user should be able to login to Travelocity with valid user and valid password","","A registered user should be able to login to Travelocity with valid user and valid password",""
+"failed","Thu Sep 19 14:02:33 ART 2019","Thu Sep 19 14:03:15 ART 2019","41986","","Login","","A registered user should be able to login to Travelocity with valid user and valid password","","A registered user should be able to login to Travelocity with valid user and valid password",""

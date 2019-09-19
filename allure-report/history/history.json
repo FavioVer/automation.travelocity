@@ -1,0 +1,61 @@
+{
+  "d2828518166b165a6447f0c049c92dce" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f69a4e05151a3b6b",
+      "status" : "failed",
+      "statusDetails" : "User can not see the account menu for their logged user",
+      "time" : {
+        "start" : 1568912595923,
+        "stop" : 1568912638208,
+        "duration" : 42285
+      }
+    } ]
+  },
+  "973fcf95e361b75961080a1a0a3dfe94" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7ee6af61f8d08fd0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1568912516335,
+        "stop" : 1568912553834,
+        "duration" : 37499
+      }
+    } ]
+  },
+  "d4a333897282b0a47cd7112a8b4246b9" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "25152ff6b0957163",
+      "status" : "failed",
+      "statusDetails" : "User can not see the account menu for their logged user",
+      "time" : {
+        "start" : 1568912553928,
+        "stop" : 1568912595914,
+        "duration" : 41986
+      }
+    } ]
+  }
+}
