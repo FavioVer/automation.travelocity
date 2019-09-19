@@ -1,0 +1,52 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Home Page",
+    "children" : [ {
+      "name" : "A user that is not logged in Travelocity should be able to see the login option",
+      "uid" : "321724cb2f51f03c",
+      "parentUid" : "d0066b610dc3383986e9ee25c4a2b04f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1568928588787,
+        "stop" : 1568928615596,
+        "duration" : 26809
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "d0066b610dc3383986e9ee25c4a2b04f"
+  }, {
+    "name" : "Login",
+    "children" : [ {
+      "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+      "uid" : "762550bfbfe493ba",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1568928615704,
+        "stop" : 1568928645621,
+        "duration" : 29917
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"validPass1\"", "\"validUser1\"" ]
+    }, {
+      "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+      "uid" : "38c87a7c04aff4bb",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1568928645634,
+        "stop" : 1568928679758,
+        "duration" : 34124
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "\"validPass2\"", "\"validUser2\"" ]
+    } ],
+    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8"
+  } ]
+}

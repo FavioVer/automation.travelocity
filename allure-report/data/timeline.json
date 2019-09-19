@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "AR-IT03963",
+    "children" : [ {
+      "name" : "12484@AR-IT03963.main(1)",
+      "children" : [ {
+        "name" : "A user that is not logged in Travelocity should be able to see the login option",
+        "uid" : "321724cb2f51f03c",
+        "parentUid" : "95f20fdddf224474a6e7da9e2c40935d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1568928588787,
+          "stop" : 1568928615596,
+          "duration" : 26809
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+        "uid" : "762550bfbfe493ba",
+        "parentUid" : "95f20fdddf224474a6e7da9e2c40935d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1568928615704,
+          "stop" : 1568928645621,
+          "duration" : 29917
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "\"validPass1\"", "\"validUser1\"" ]
+      }, {
+        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+        "uid" : "38c87a7c04aff4bb",
+        "parentUid" : "95f20fdddf224474a6e7da9e2c40935d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1568928645634,
+          "stop" : 1568928679758,
+          "duration" : 34124
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "\"validPass2\"", "\"validUser2\"" ]
+      } ],
+      "uid" : "95f20fdddf224474a6e7da9e2c40935d"
+    } ],
+    "uid" : "764c3bab439ff6a92f7d158d1d52586a"
+  } ]
+}

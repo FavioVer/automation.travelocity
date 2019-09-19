@@ -1,0 +1,60 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Home Page",
+    "children" : [ {
+      "name" : "A user that is not logged in Travelocity should be able to see the login option",
+      "children" : [ {
+        "name" : "A user that is not logged in Travelocity should be able to see the login option",
+        "uid" : "321724cb2f51f03c",
+        "parentUid" : "b60a25653d50431a6e200ced8f2a848c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1568928588787,
+          "stop" : 1568928615596,
+          "duration" : 26809
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b60a25653d50431a6e200ced8f2a848c"
+    } ],
+    "uid" : "5cfe2eef28b5794e1595ba37ecd4fef0"
+  }, {
+    "name" : "Login",
+    "children" : [ {
+      "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+      "children" : [ {
+        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+        "uid" : "762550bfbfe493ba",
+        "parentUid" : "0b4837a7da7de5f49546f29ba419c2e8",
+        "status" : "failed",
+        "time" : {
+          "start" : 1568928615704,
+          "stop" : 1568928645621,
+          "duration" : 29917
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "\"validPass1\"", "\"validUser1\"" ]
+      }, {
+        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
+        "uid" : "38c87a7c04aff4bb",
+        "parentUid" : "0b4837a7da7de5f49546f29ba419c2e8",
+        "status" : "failed",
+        "time" : {
+          "start" : 1568928645634,
+          "stop" : 1568928679758,
+          "duration" : 34124
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "\"validPass2\"", "\"validUser2\"" ]
+      } ],
+      "uid" : "0b4837a7da7de5f49546f29ba419c2e8"
+    } ],
+    "uid" : "14102d61eef2af473312d4f91dec531b"
+  } ]
+}
