@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class DateTimeUtils {
 
-    public static String parseDateToGivenFormat(String date, String actualFormat, String desiredFormat) throws ParseException {
+    public static String parseDateToGivenFormat(String date, String actualFormat) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat(actualFormat);
         SimpleDateFormat formatToReturn = new SimpleDateFormat(actualFormat);
         Date dateToFormat = format.parse(date);

@@ -14,42 +14,38 @@ import org.openqa.selenium.remote.CapabilityType;
 
 public class WebDriverFactory {
 
-	public WebDriver get() {
-		WebDriver driver = generateDriver();
-		driver.manage().timeouts().implicitlyWait(1, SECONDS);
-		driver.manage().window().maximize();
-		return driver;
-	}
+    public WebDriver get() {
+        WebDriver driver = generateDriver();
+        driver.manage().timeouts().implicitlyWait(1, SECONDS);
+        driver.manage().window().maximize();
+        return driver;
+    }
 
-	public static WebDriver generateDriver() {
-		WebDriver driver = null;
-		WebdriverConfig config = ConfigFactory.create(WebdriverConfig.class);
-		String browser = config.browser().toUpperCase();
-		switch (browser) {
-		case "FIREFOX":
-			System.setProperty("webdriver.gecko.driver", config.geckoDriver());
-			driver = new FirefoxDriver();
-			break;
-		case "CHROME":
-			System.setProperty("webdriver.chrome.driver", config.chromeDriver());
-			driver = new ChromeDriver();
-			break;
-		case "IE":
-			InternetExplorerOptions IEOptions = new InternetExplorerOptions();
-			IEOptions.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
-			IEOptions.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-			IEOptions.setCapability("requireWindowFocus", true);
-			IEOptions.setCapability("ignoreZoomSetting", true);
-			File file = new File("IEDriverServer.exe");
-			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-			driver = new InternetExplorerDriver(IEOptions);
-			break;
-		default:
-			System.setProperty("webdriver.chrome.driver", config.chromeDriver());
-			driver = new ChromeDriver();
-			break;
-		}
-		return driver;
-	}
+    public static WebDriver generateDriver() {
+        WebDriver driver = null;
+        WebdriverConfig config = ConfigFactory.create(WebdriverConfig.class);
+        String browser = config.browser().toUpperCase();
+        switch (browser) {
+            case "FIREFOX":
+                System.setProperty("webdriver.gecko.driver", config.geckoDriver());
+                driver = new FirefoxDriver();
+                break;
+            case "IE":
+                InternetExplorerOptions IEOptions = new InternetExplorerOptions();
+                IEOptions.setCapability(CapabilityType.BROWSER_NAME, "internet explorer");
+                IEOptions.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+                IEOptions.setCapability("requireWindowFocus", true);
+                IEOptions.setCapability("ignoreZoomSetting", true);
+                File file = new File("IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+                driver = new InternetExplorerDriver(IEOptions);
+                break;
+            default:
+                System.setProperty("webdriver.chrome.driver", config.chromeDriver());
+                driver = new ChromeDriver();
+                break;
+        }
+        return driver;
+    }
 
 }
