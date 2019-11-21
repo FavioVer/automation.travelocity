@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.travelocity.framework.utils.WebDriverUtils;
+import com.travelocity.framework.ui.driver.utils.WebDriverUtils;
 
 public abstract class PageObjectBase {
 

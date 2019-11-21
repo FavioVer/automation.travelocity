@@ -1,11 +1,12 @@
 package com.travelocity.framework.utils;
 
-import com.travelocity.framework.configuration.ConfigFile;
 import com.travelocity.framework.logger.Loggable;
 import com.travelocity.framework.ui.browser.Browsers;
+import com.travelocity.framework.ui.platform.Platform;
 
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
+import com.travelocity.framework.configuration.ConfigFile;
 
 public class ConfigUtils implements Loggable {
 
@@ -34,6 +35,9 @@ public class ConfigUtils implements Loggable {
         return get(ENVIRONMENT) == null ? DEFAULT_ENVIRONMENT : get(ENVIRONMENT);
     }
 
+    public static Platform getPlatform() {
+        return get(PLATFORM) == null ? Platform.WEB : Platform.valueOf(get(PLATFORM).toUpperCase());
+    }
 
     public static Browsers getBrowser() {
         return get(BROWSER) == null ? Browsers.CHROME : Browsers.valueOf(get(BROWSER).toUpperCase());

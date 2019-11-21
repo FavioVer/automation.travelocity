@@ -1,4 +1,4 @@
-package com.travelocity.framework.utils;
+package com.travelocity.framework.ui.driver.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
