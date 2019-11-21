@@ -6,8 +6,8 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 
-import com.travelocity.framework.datamanagement.EnvironmentProvider;
-import com.travelocity.framework.datamanagement.ExecutionPropertiesProvider;
+import com.travelocity.framework.configuration.EnvironmentProvider;
+import com.travelocity.framework.configuration.ExecutionPropertiesProvider;
 
 public class Context {
 

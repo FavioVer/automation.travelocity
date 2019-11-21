@@ -1,4 +1,4 @@
-package com.travelocity.framework.datamanagement;
+package com.travelocity.framework.configuration;
 
 import java.io.File;
 import java.io.IOException;
