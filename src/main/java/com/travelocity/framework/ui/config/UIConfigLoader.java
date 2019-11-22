@@ -1,7 +1,6 @@
 package com.travelocity.framework.ui.config;
 
 import com.travelocity.framework.configuration.ConfigFile;
-import com.travelocity.framework.configuration.Configuration;
 import com.travelocity.framework.exceptions.ConfigLoaderException;
 import com.travelocity.framework.logger.Loggable;
 import com.travelocity.framework.utils.ConfigUtils;
@@ -11,7 +10,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public enum UIConfigLoader implements Configuration, Loggable {
+public enum UIConfigLoader implements UIConfigurable, Loggable {
 
     CONFIG;
 

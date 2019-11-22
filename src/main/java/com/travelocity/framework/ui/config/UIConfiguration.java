@@ -5,7 +5,7 @@ import com.travelocity.framework.configuration.BaseConfiguration;
 import com.travelocity.framework.logger.Loggable;
 
 
-public class UIConfiguration extends BaseConfiguration implements Loggable {
+public class UIConfiguration extends BaseConfiguration implements UIConfigurable, Loggable {
 
     private String remoteServerURL;
 

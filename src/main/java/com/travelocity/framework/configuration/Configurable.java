@@ -1,7 +1,7 @@
 package com.travelocity.framework.configuration;
 
 
-public interface Configuration {
+public interface Configurable {
 
     String getBaseURL();
 

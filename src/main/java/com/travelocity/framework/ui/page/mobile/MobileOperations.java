@@ -1,7 +1,7 @@
 package com.travelocity.framework.ui.page.mobile;
 
-import com.disney.cast.platform.common.bdd.ui.driver.Drivers;
-import com.disney.cast.platform.common.bdd.ui.page.CommonOperations;
+import com.travelocity.framework.ui.driver.Drivers;
+import com.travelocity.framework.ui.page.CommonOperations;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
 
