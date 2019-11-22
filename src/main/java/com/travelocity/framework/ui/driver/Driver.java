@@ -7,10 +7,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 import static com.travelocity.framework.ui.config.UIConfigLoader.CONFIG;
-import static java.time.temporal.ChronoUnit.SECONDS;
 
 /**
  * Driver is the container of the {@link WebDriver} instance and the {@link Platform} information.

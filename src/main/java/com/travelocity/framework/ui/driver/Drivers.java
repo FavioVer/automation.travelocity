@@ -4,6 +4,7 @@ import com.travelocity.framework.logger.Loggable;
 import com.travelocity.framework.ui.browser.Browsers;
 import com.travelocity.framework.ui.config.UIConfigLoader;
 import com.travelocity.framework.ui.platform.Platform;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -37,8 +38,7 @@ public final class Drivers implements Loggable {
             WebDriver webdriver;
             switch (platform) {
                 case MOBILE:
-                    webdriver = null;
-                    //webdriver = new AppiumDriver(new URL(UIConfigLoader.CONFIG.getAppiumURL()), browsers.getCapabilities());
+                    webdriver = new AppiumDriver(new URL(UIConfigLoader.CONFIG.getAppiumURL()), browsers.getCapabilities());
                     break;
                 case WEB:
                     webdriver = setupWebDriverForWeb(browsers);
