@@ -1,32 +1,30 @@
 package com.travelocity.stepDefinitions;
 
-import java.io.IOException;
-
+import com.travelocity.constants.AppNames;
+import com.travelocity.framework.webdriver.Context;
+import com.travelocity.pageobjects.TravelocityHomePage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import com.travelocity.constants.AppNames;
-import com.travelocity.framework.webdriver.Context;
-import com.travelocity.pageobjects.TravelocityHomePage;
-
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import java.io.IOException;
 
 public class BasicStepsDefinitions {
 
+    private static String app;
     private WebDriver driver;
-    static String app = "";
     private TravelocityHomePage travelocityHomePage;
 
     public BasicStepsDefinitions() {
-        this.driver = Hooks.getwebDriver();
+        this.driver = Hooks.getWebDriver();
     }
 
-    public void getUrlOfTravelocityHomePage() {
+    private void getUrlOfTravelocityHomePage() {
         app = AppNames.TRAVELOCITY_HOME_NAME;
     }
 

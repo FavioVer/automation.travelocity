@@ -1,61 +1,67 @@
 {
-  "d2828518166b165a6447f0c049c92dce" : {
-    "statistic" : {
-      "failed" : 1,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
+  "d2828518166b165a6447f0c049c92dce": {
+    "statistic": {
+      "failed": 1,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
     },
-    "items" : [ {
-      "uid" : "38c87a7c04aff4bb",
-      "status" : "failed",
-      "statusDetails" : "User can not see the account menu for their logged user",
-      "time" : {
-        "start" : 1568928645634,
-        "stop" : 1568928679758,
-        "duration" : 34124
+    "items": [
+      {
+        "uid": "38c87a7c04aff4bb",
+        "status": "failed",
+        "statusDetails": "User can not see the account menu for their logged user",
+        "time": {
+          "start": 1568928645634,
+          "stop": 1568928679758,
+          "duration": 34124
+        }
       }
-    } ]
+    ]
   },
-  "973fcf95e361b75961080a1a0a3dfe94" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
+  "973fcf95e361b75961080a1a0a3dfe94": {
+    "statistic": {
+      "failed": 0,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 1,
+      "unknown": 0,
+      "total": 1
     },
-    "items" : [ {
-      "uid" : "321724cb2f51f03c",
-      "status" : "passed",
-      "time" : {
-        "start" : 1568928588787,
-        "stop" : 1568928615596,
-        "duration" : 26809
+    "items": [
+      {
+        "uid": "321724cb2f51f03c",
+        "status": "passed",
+        "time": {
+          "start": 1568928588787,
+          "stop": 1568928615596,
+          "duration": 26809
+        }
       }
-    } ]
+    ]
   },
-  "d4a333897282b0a47cd7112a8b4246b9" : {
-    "statistic" : {
-      "failed" : 1,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
+  "d4a333897282b0a47cd7112a8b4246b9": {
+    "statistic": {
+      "failed": 1,
+      "broken": 0,
+      "skipped": 0,
+      "passed": 0,
+      "unknown": 0,
+      "total": 1
     },
-    "items" : [ {
-      "uid" : "762550bfbfe493ba",
-      "status" : "failed",
-      "statusDetails" : "User can not see the account menu for their logged user",
-      "time" : {
-        "start" : 1568928615704,
-        "stop" : 1568928645621,
-        "duration" : 29917
+    "items": [
+      {
+        "uid": "762550bfbfe493ba",
+        "status": "failed",
+        "statusDetails": "User can not see the account menu for their logged user",
+        "time": {
+          "start": 1568928615704,
+          "stop": 1568928645621,
+          "duration": 29917
+        }
       }
-    } ]
+    ]
   }
 }

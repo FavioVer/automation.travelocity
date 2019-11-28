@@ -1,12 +1,12 @@
 package com.travelocity.framework.utils;
 
+import com.travelocity.framework.configuration.ConfigFile;
 import com.travelocity.framework.logger.Loggable;
 import com.travelocity.framework.ui.browser.Browsers;
 import com.travelocity.framework.ui.platform.Platform;
 
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
-import com.travelocity.framework.configuration.ConfigFile;
 
 public class ConfigUtils implements Loggable {
 

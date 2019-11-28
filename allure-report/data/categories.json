@@ -1,39 +1,52 @@
 {
-  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "name" : "categories",
-  "children" : [ {
-    "name" : "Product defects",
-    "children" : [ {
-      "name" : "User can not see the account menu for their logged user",
-      "children" : [ {
-        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
-        "uid" : "762550bfbfe493ba",
-        "parentUid" : "658259d2efdaa73a693cebe718dc84f6",
-        "status" : "failed",
-        "time" : {
-          "start" : 1568928615704,
-          "stop" : 1568928645621,
-          "duration" : 29917
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "\"validPass1\"", "\"validUser1\"" ]
-      }, {
-        "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
-        "uid" : "38c87a7c04aff4bb",
-        "parentUid" : "658259d2efdaa73a693cebe718dc84f6",
-        "status" : "failed",
-        "time" : {
-          "start" : 1568928645634,
-          "stop" : 1568928679758,
-          "duration" : 34124
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "\"validPass2\"", "\"validUser2\"" ]
-      } ],
-      "uid" : "658259d2efdaa73a693cebe718dc84f6"
-    } ],
-    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
-  } ]
+  "uid": "4b4757e66a1912dae1a509f688f20b0f",
+  "name": "categories",
+  "children": [
+    {
+      "name": "Product defects",
+      "children": [
+        {
+          "name": "User can not see the account menu for their logged user",
+          "children": [
+            {
+              "name": "A registered user should be able to log in to Travelocity with valid user and valid password",
+              "uid": "762550bfbfe493ba",
+              "parentUid": "658259d2efdaa73a693cebe718dc84f6",
+              "status": "failed",
+              "time": {
+                "start": 1568928615704,
+                "stop": 1568928645621,
+                "duration": 29917
+              },
+              "flaky": false,
+              "newFailed": false,
+              "parameters": [
+                "\"validPass1\"",
+                "\"validUser1\""
+              ]
+            },
+            {
+              "name": "A registered user should be able to log in to Travelocity with valid user and valid password",
+              "uid": "38c87a7c04aff4bb",
+              "parentUid": "658259d2efdaa73a693cebe718dc84f6",
+              "status": "failed",
+              "time": {
+                "start": 1568928645634,
+                "stop": 1568928679758,
+                "duration": 34124
+              },
+              "flaky": false,
+              "newFailed": false,
+              "parameters": [
+                "\"validPass2\"",
+                "\"validUser2\""
+              ]
+            }
+          ],
+          "uid": "658259d2efdaa73a693cebe718dc84f6"
+        }
+      ],
+      "uid": "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+    }
+  ]
 }

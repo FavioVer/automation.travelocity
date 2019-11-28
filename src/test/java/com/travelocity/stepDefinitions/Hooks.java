@@ -1,20 +1,18 @@
 package com.travelocity.stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-
 import com.travelocity.framework.webdriver.WebDriverFactory;
-
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    protected static WebDriver driver;
+    private static WebDriver driver;
 
-    public static WebDriver getwebDriver() {
+    static WebDriver getWebDriver() {
         return driver;
     }
 

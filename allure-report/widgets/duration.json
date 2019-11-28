@@ -1,31 +1,35 @@
-[ {
-  "uid" : "321724cb2f51f03c",
-  "name" : "A user that is not logged in Travelocity should be able to see the login option",
-  "time" : {
-    "start" : 1568928588787,
-    "stop" : 1568928615596,
-    "duration" : 26809
+[
+  {
+    "uid": "321724cb2f51f03c",
+    "name": "A user that is not logged in Travelocity should be able to see the login option",
+    "time": {
+      "start": 1568928588787,
+      "stop": 1568928615596,
+      "duration": 26809
+    },
+    "status": "passed",
+    "severity": "normal"
   },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "762550bfbfe493ba",
-  "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
-  "time" : {
-    "start" : 1568928615704,
-    "stop" : 1568928645621,
-    "duration" : 29917
+  {
+    "uid": "762550bfbfe493ba",
+    "name": "A registered user should be able to log in to Travelocity with valid user and valid password",
+    "time": {
+      "start": 1568928615704,
+      "stop": 1568928645621,
+      "duration": 29917
+    },
+    "status": "failed",
+    "severity": "normal"
   },
-  "status" : "failed",
-  "severity" : "normal"
-}, {
-  "uid" : "38c87a7c04aff4bb",
-  "name" : "A registered user should be able to log in to Travelocity with valid user and valid password",
-  "time" : {
-    "start" : 1568928645634,
-    "stop" : 1568928679758,
-    "duration" : 34124
-  },
-  "status" : "failed",
-  "severity" : "normal"
-} ]
+  {
+    "uid": "38c87a7c04aff4bb",
+    "name": "A registered user should be able to log in to Travelocity with valid user and valid password",
+    "time": {
+      "start": 1568928645634,
+      "stop": 1568928679758,
+      "duration": 34124
+    },
+    "status": "failed",
+    "severity": "normal"
+  }
+]

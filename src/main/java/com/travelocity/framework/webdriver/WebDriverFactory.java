@@ -1,9 +1,5 @@
 package com.travelocity.framework.webdriver;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
-import java.io.File;
-
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,18 +8,15 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
+import java.io.File;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 public class WebDriverFactory {
 
-    public WebDriver get() {
-        WebDriver driver = generateDriver();
-        driver.manage().timeouts().implicitlyWait(1, SECONDS);
-        driver.manage().window().maximize();
-        return driver;
-    }
-
     public static WebDriver generateDriver() {
-        WebDriver driver = null;
-        WebdriverConfig config = ConfigFactory.create(WebdriverConfig.class);
+        WebDriver driver;
+        WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class);
         String browser = config.browser().toUpperCase();
         switch (browser) {
             case "FIREFOX":
@@ -45,6 +38,13 @@ public class WebDriverFactory {
                 driver = new ChromeDriver();
                 break;
         }
+        return driver;
+    }
+
+    public WebDriver get() {
+        WebDriver driver = generateDriver();
+        driver.manage().timeouts().implicitlyWait(1, SECONDS);
+        driver.manage().window().maximize();
         return driver;
     }
 
