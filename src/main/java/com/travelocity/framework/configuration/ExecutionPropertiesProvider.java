@@ -11,6 +11,9 @@ public class ExecutionPropertiesProvider {
 
     private static Properties properties;
 
+    private ExecutionPropertiesProvider() {
+    }
+
     private static Properties getInstance() throws IOException {
         if (properties == null) {
             properties = new Properties();

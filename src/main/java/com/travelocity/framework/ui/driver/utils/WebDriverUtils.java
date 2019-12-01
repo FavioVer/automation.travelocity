@@ -1,14 +1,15 @@
 package com.travelocity.framework.ui.driver.utils;
 
+import com.travelocity.framework.logger.Loggable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebDriverUtils {
+public class WebDriverUtils implements Loggable {
     protected static final int TIME_OUT_FOR_ELEMENT = 5;
     protected static final int TIME_OUT_FOR_WAIT = 10;
 
-    private static WebDriverWait driverWait;
+    private WebDriverWait driverWait;
 
     public void initializeDriverWait(WebDriver driver) {
         driverWait = new WebDriverWait(driver, TIME_OUT_FOR_WAIT);
@@ -19,7 +20,7 @@ public class WebDriverUtils {
             driverWait.until(ExpectedConditions.presenceOfElementLocated(by));
             return true;
         } catch (TimeoutException | NoSuchElementException e) {
-            e.printStackTrace();
+            error(e.getMessage());
         }
         return false;
     }
@@ -29,7 +30,7 @@ public class WebDriverUtils {
             driverWait.until((ExpectedConditions.visibilityOfElementLocated(by)));
             return true;
         } catch (NoSuchElementException | TimeoutException e) {
-            e.printStackTrace();
+            error(e.getMessage());
         }
         return false;
     }
@@ -39,7 +40,7 @@ public class WebDriverUtils {
             driverWait.until((ExpectedConditions.visibilityOf(element)));
             return true;
         } catch (NoSuchElementException | TimeoutException e) {
-            e.printStackTrace();
+            error(e.getMessage());
         }
         return false;
     }
@@ -50,7 +51,7 @@ public class WebDriverUtils {
             driverWait.until(ExpectedConditions.elementToBeClickable(element));
             return true;
         } catch (NoSuchElementException | TimeoutException e) {
-            e.printStackTrace();
+            error(e.getMessage());
         }
         return false;
     }

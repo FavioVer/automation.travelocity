@@ -14,17 +14,17 @@ public class Context {
     private static Context instance;
     private String ENVIRONMENT = Objects.requireNonNull(ExecutionPropertiesProvider.getString("environment")).replaceAll(" ", "");
 
-    private Context() {
+    private Context() throws IOException {
     }
 
-    public static synchronized Context getInstance() {
+    public static synchronized Context getInstance() throws IOException {
         if (instance == null) {
             instance = new Context();
         }
         return instance;
     }
 
-    public static String getEnvironment() {
+    public static String getEnvironment() throws IOException {
         return getInstance().ENVIRONMENT;
     }
 

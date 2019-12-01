@@ -17,7 +17,7 @@ public interface WebDriverConfig extends Config {
     String chromeDriver();
 
     @Key("webdriver.internetexplorerdriver")
-    String InternetExplorerDriver();
+    String internetExplorerDriver();
 
     @Key("reportConfigPath")
     String reportConfigPath();
