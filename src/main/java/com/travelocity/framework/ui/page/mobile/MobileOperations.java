@@ -14,7 +14,7 @@ public abstract class MobileOperations extends CommonOperations {
      * @param text          the text
      */
     protected void type(MobileElement mobileElement, String text) {
-        isClickable(mobileElement);
+        isElementClickable(mobileElement);
         mobileElement.setValue(text);
     }
 
@@ -24,7 +24,7 @@ public abstract class MobileOperations extends CommonOperations {
      * @param mobileElement the {@link MobileElement}
      */
     protected void tap(MobileElement mobileElement) {
-        isClickable(mobileElement);
+        isElementClickable(mobileElement);
         touchActions().singleTap(mobileElement);
     }
 

@@ -32,7 +32,7 @@ public class BasicStepsDefinitions {
     public void goToTravelocityHomePage() throws EncryptedDocumentException, InvalidFormatException, IOException {
         getUrlOfTravelocityHomePage();
         Context.initializePageInstance(driver, app);
-        travelocityHomePage = new TravelocityHomePage(driver);
+        travelocityHomePage = new TravelocityHomePage();
     }
 
     @Given("^I am not logged in Travelocity$")

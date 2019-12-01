@@ -1,12 +1,11 @@
 package com.travelocity.pageobjects;
 
+import com.travelocity.framework.ui.page.web.WebPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TravelocityHomePage extends PageObjectBase {
+public class TravelocityHomePage extends WebPage {
 
     private static final String COPYRIGHT_FOOTER_ID = "footer-copyright-msg";
     private static final String ACCOUNT_MENU_BUTTON_LOGGED_ID = "header-account-menu-signed-in";
@@ -26,8 +25,8 @@ public class TravelocityHomePage extends PageObjectBase {
     @FindBy(id = CREATE_ACCOUNT_ID)
     private WebElement createAccountOption;
 
-    public TravelocityHomePage(WebDriver driver) {
-        super(driver);
+    public TravelocityHomePage() {
+        super();
     }
 
     @Override
@@ -36,24 +35,16 @@ public class TravelocityHomePage extends PageObjectBase {
     }
 
     public boolean isAccountMenuButtonForLoggedUserVisible() {
-        try {
-            return getWebDriverUtils().waitForElementToBeVisible(accountMenuButtonForLoggedUser);
-        } catch (TimeoutException e) {
-            return false;
-        }
+        return isElementVisible(accountMenuButtonForLoggedUser);
     }
 
     public boolean isAccountMenuButtonVisible() {
-        try {
-            return getWebDriverUtils().waitForElementToBeVisible(accountMenuButton);
-        } catch (TimeoutException e) {
-            return false;
-        }
+        return isElementVisible(accountMenuButton);
     }
 
     public void signOutAccount() {
         click(accountMenuButtonForLoggedUser);
-        if (getWebDriverUtils().waitForElementToBeVisible(signOutOption)) {
+        if (isElementClickable(signOutOption)) {
             click(signOutOption);
         }
     }

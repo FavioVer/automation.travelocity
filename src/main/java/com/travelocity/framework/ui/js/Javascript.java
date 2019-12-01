@@ -19,7 +19,7 @@ public final class Javascript {
      * @param webElement the {@link WebElement}
      */
     public static void click(WebElement webElement) {
-        js().executeScript("arguments[0].click();", webElement);
+        getJavascriptExecutor().executeScript("arguments[0].click();", webElement);
     }
 
     /**
@@ -27,7 +27,11 @@ public final class Javascript {
      *
      * @return the {@link JavascriptExecutor}
      */
-    private static JavascriptExecutor js() {
+    private static JavascriptExecutor getJavascriptExecutor() {
         return (JavascriptExecutor) Drivers.getDriver().getWebDriver();
+    }
+
+    public void scrollIntoView(WebElement element) {
+        getJavascriptExecutor().executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

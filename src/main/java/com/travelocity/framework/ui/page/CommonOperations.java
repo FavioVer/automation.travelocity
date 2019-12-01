@@ -1,6 +1,7 @@
 package com.travelocity.framework.ui.page;
 
 import com.travelocity.framework.ui.driver.Drivers;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import static java.util.stream.Stream.of;
@@ -20,8 +21,12 @@ public abstract class CommonOperations extends WaitOperations {
      * @param webElement the {@link WebElement}
      */
     protected void click(WebElement webElement) {
-        isClickable(webElement);
-        webElement.click();
+        if (isElementClickable(webElement)) {
+            webElement.click();
+        } else {
+            throw new NoSuchElementException("Unable to find element to perform click");
+        }
+
     }
 
     /**
@@ -31,8 +36,11 @@ public abstract class CommonOperations extends WaitOperations {
      * @return the text
      */
     protected String getText(WebElement webElement) {
-        isVisible(webElement);
-        return webElement.getText();
+        if (isElementVisible(webElement)) {
+            return webElement.getText();
+        } else {
+            throw new NoSuchElementException("Unable to find element");
+        }
     }
 
     /**

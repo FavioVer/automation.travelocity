@@ -2,7 +2,9 @@ package com.travelocity.framework.ui.page.web;
 
 import com.travelocity.framework.ui.driver.Drivers;
 import com.travelocity.framework.ui.page.CommonOperations;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public abstract class WebOperations extends CommonOperations {
@@ -30,7 +32,7 @@ public abstract class WebOperations extends CommonOperations {
      * @param text       the text
      */
     protected boolean type(WebElement webElement, String text) {
-        isVisible(webElement);
+        isElementVisible(webElement);
         webElement.sendKeys(text);
         return isTextPresent(webElement, text);
     }
@@ -42,11 +44,23 @@ public abstract class WebOperations extends CommonOperations {
      * @param text       the text to select
      */
     protected void selectByText(WebElement webElement, String text) {
-        select(webElement).selectByVisibleText(text);
+        getSelect(webElement).selectByVisibleText(text);
     }
 
-    private Select select(WebElement webElement) {
+    private Select getSelect(WebElement webElement) {
         return new Select(webElement);
     }
+
+    public boolean clickWithActionsBuilder(WebElement element) {
+        try {
+            Actions builder = new Actions(Drivers.getDriver().getWebDriver());
+            builder.moveToElement(element).click(element);
+            builder.perform();
+            return true;
+        } catch (TimeoutException toe) {
+            return false;
+        }
+    }
+
 
 }

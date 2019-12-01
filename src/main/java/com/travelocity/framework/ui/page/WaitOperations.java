@@ -1,43 +1,84 @@
 package com.travelocity.framework.ui.page;
 
+import com.travelocity.framework.logger.Loggable;
 import com.travelocity.framework.ui.driver.Drivers;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public abstract class WaitOperations {
+public abstract class WaitOperations implements Loggable {
 
     /**
-     * Verifies if an element is clickable before clicking on it.
+     * Wait for a element to be visible
      *
      * @param webElement the {@link WebElement}
-     * @return the {@link WebElement}
+     * @return WebElement
      */
-    protected boolean isClickable(WebElement webElement) {
-        return waiting().until(elementToBeClickable(webElement)).isEnabled();
+    public WebElement waitForElementToBeVisible(WebElement webElement) {
+        return getWebDriverWait().until((ExpectedConditions.visibilityOf(webElement)));
+    }
+
+    /**
+     * Wait for a element to be clickable
+     *
+     * @param webElement the {@link WebElement}
+     * @return WebElement
+     */
+    public WebElement waitForElementToBeClickable(WebElement webElement) {
+        return getWebDriverWait().until((ExpectedConditions.elementToBeClickable(webElement)));
     }
 
     /**
      * Verifies if an element is visible before interacting with it.
      *
      * @param webElement the {@link WebElement}
-     * @return the {@link WebElement}
+     * @return {@code TRUE} if the element is visible
      */
-    protected boolean isVisible(WebElement webElement) {
-        return waiting().until(visibilityOf(webElement)).isDisplayed();
+    protected boolean isElementVisible(WebElement webElement) {
+        try {
+            return waitForElementToBeVisible(webElement).isDisplayed();
+        } catch (TimeoutException | NoSuchElementException e) {
+            error(e.getMessage());
+            return false;
+        }
     }
+
+    /**
+     * Verifies if an element is clickable before clicking on it.
+     *
+     * @param webElement the {@link WebElement}
+     * @return {@code TRUE} if the element is clickable
+     */
+    protected boolean isElementClickable(WebElement webElement) {
+        try {
+            return waitForElementToBeClickable(webElement).isEnabled();
+        } catch (TimeoutException | NoSuchElementException e) {
+            error(e.getMessage());
+            return false;
+        }
+    }
+
 
     /**
      * Verifies if all elements are visible before interacting with it.
      *
      * @param webElements a {@link List} of {@link WebElement}
-     * @return the list of elements
+     * @return {@code TRUE} if the elements are present
      */
     protected boolean areVisible(List<WebElement> webElements) {
-        return waiting().until(visibilityOfAllElements(webElements)).stream().allMatch(WebElement::isDisplayed);
+        try {
+            return getWebDriverWait().until(visibilityOfAllElements(webElements)).stream().allMatch(WebElement::isDisplayed);
+        } catch (TimeoutException | NoSuchElementException e) {
+            error(e.getMessage());
+            return false;
+        }
     }
 
     /**
@@ -48,10 +89,66 @@ public abstract class WaitOperations {
      * @return {@code TRUE} if the text is present
      */
     protected boolean isTextPresent(WebElement webElement, String text) {
-        return waiting().until(or(textToBePresentInElement(webElement, text), textToBePresentInElementValue(webElement, text)));
+        try {
+            return getWebDriverWait().until(or(textToBePresentInElement(webElement, text), textToBePresentInElementValue(webElement, text)));
+        } catch (TimeoutException | NoSuchElementException e) {
+            error(e.getMessage());
+            return false;
+        }
     }
 
-    private WebDriverWait waiting() {
+
+    /**
+     * Wait for a element located to be present
+     *
+     * @param by the {@link By}
+     */
+    public void waitForElementLocatedToBePresent(By by) {
+        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    /**
+     * Wait for a element located to be visible
+     *
+     * @param by the {@link By}
+     */
+    public WebElement waitForElementLocatedToBeVisible(By by) {
+        return getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+
+    /**
+     * Verifies if an element located is present before.
+     *
+     * @param by the {@link By}
+     * @return {@code TRUE} if the element located is present
+     */
+    protected boolean isElementLocatedPresent(By by) {
+        try {
+            waitForElementLocatedToBePresent(by);
+            return true;
+        } catch (NoSuchElementException | TimeoutException e) {
+            error(e.getMessage());
+        }
+        return false;
+    }
+
+    /**
+     * Verifies if an element located is visible before interacting with it.
+     *
+     * @param by the {@link By}
+     * @return the {@link WebElement}
+     */
+    protected boolean isElementLocatedVisible(By by) {
+        try {
+            return waitForElementLocatedToBeVisible(by).isDisplayed();
+        } catch (TimeoutException | NoSuchElementException e) {
+            error(e.getMessage());
+            return false;
+        }
+    }
+
+    private WebDriverWait getWebDriverWait() {
         return Drivers.getDriver().getWebDriverWait();
     }
 }
