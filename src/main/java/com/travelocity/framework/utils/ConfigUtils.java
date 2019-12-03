@@ -19,7 +19,7 @@ public class ConfigUtils implements Loggable {
     private ConfigUtils() {
     }
 
-    private static String get(String key) {
+    private static String getPropertyValue(String key) {
         String environment = getProperty(key);
         if (environment == null) {
             environment = getenv(key);
@@ -32,14 +32,14 @@ public class ConfigUtils implements Loggable {
     }
 
     public static String getEnvironment() {
-        return get(ENVIRONMENT) == null ? DEFAULT_ENVIRONMENT : get(ENVIRONMENT);
+        return getPropertyValue(ENVIRONMENT) == null ? DEFAULT_ENVIRONMENT : getPropertyValue(ENVIRONMENT);
     }
 
     public static Platform getPlatform() {
-        return get(PLATFORM) == null ? Platform.WEB : Platform.valueOf(get(PLATFORM).toUpperCase());
+        return getPropertyValue(PLATFORM) == null ? Platform.SERVICES : Platform.valueOf(getPropertyValue(PLATFORM).toUpperCase());
     }
 
     public static Browsers getBrowser() {
-        return get(BROWSER) == null ? Browsers.CHROME : Browsers.valueOf(get(BROWSER).toUpperCase());
+        return getPropertyValue(BROWSER) == null ? Browsers.CHROME : Browsers.valueOf(getPropertyValue(BROWSER).toUpperCase());
     }
 }
