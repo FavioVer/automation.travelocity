@@ -10,16 +10,16 @@ import java.net.MalformedURLException;
 
 public class Hooks {
 
-    private static boolean firstRun = true;
+    private static boolean isFirstRun = true;
 
     @Before
     public void before() throws MalformedURLException {
-        if (firstRun) {
+        if (isFirstRun) {
             Runtime.getRuntime().addShutdownHook(afterAllThread());
             if (Platform.WEB.equals(ConfigUtils.getPlatform())) {
                 SeleniumStandaloneServer.SERVER.start();
             }
-            firstRun = false;
+            isFirstRun = false;
         }
         Drivers.populateDriver(ConfigUtils.getPlatform(), ConfigUtils.getBrowser());
 
