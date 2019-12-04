@@ -20,11 +20,11 @@ public class ConfigUtils implements Loggable {
     }
 
     private static String getPropertyValue(String key) {
-        String environment = getProperty(key);
-        if (environment == null) {
-            environment = getenv(key);
+        String property = getProperty(key);
+        if (property == null) {
+            property = getenv(key);
         }
-        return environment;
+        return property;
     }
 
     public static String getConfigFileNameByType(ConfigFile fileType) {
@@ -36,7 +36,7 @@ public class ConfigUtils implements Loggable {
     }
 
     public static Platform getPlatform() {
-        return getPropertyValue(PLATFORM) == null ? Platform.SERVICES : Platform.valueOf(getPropertyValue(PLATFORM).toUpperCase());
+        return getPropertyValue(PLATFORM) == null ? Platform.WEB : Platform.valueOf(getPropertyValue(PLATFORM).toUpperCase());
     }
 
     public static Browsers getBrowser() {

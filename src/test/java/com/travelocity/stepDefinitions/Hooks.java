@@ -1,43 +1,35 @@
 package com.travelocity.stepDefinitions;
 
-import com.travelocity.framework.webdriver.WebDriverFactory;
-import io.cucumber.core.api.Scenario;
-import io.cucumber.java.After;
+import com.travelocity.framework.ui.driver.Drivers;
+import com.travelocity.framework.ui.platform.Platform;
+import com.travelocity.framework.ui.server.SeleniumStandaloneServer;
+import com.travelocity.framework.utils.ConfigUtils;
 import io.cucumber.java.Before;
-import org.openqa.selenium.WebDriver;
 
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
 
 public class Hooks {
 
-    private static WebDriver driver;
-
-    static WebDriver getWebDriver() {
-        return driver;
-    }
+    private static boolean isFirstRun = true;
 
     @Before
-    public void tearUp(Scenario scenario) {
-        if (scenario.getSourceTagNames().contains("@NoBrowser")) {
-            System.out.println("Initializing service testing");
-        } else {
-            driver = WebDriverFactory.generateDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-            driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+    public void before() throws MalformedURLException {
+        if (isFirstRun) {
+            Runtime.getRuntime().addShutdownHook(afterAllThread());
+            if (Platform.WEB.equals(ConfigUtils.getPlatform())) {
+                SeleniumStandaloneServer.SERVER.start();
+            }
+            isFirstRun = false;
         }
+        Drivers.populateDriver(ConfigUtils.getPlatform(), ConfigUtils.getBrowser());
+
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        if (scenario.getSourceTagNames().contains("@NoBrowser")) {
-            System.out.println("Finalizing service testing");
-        } else {
-            if (driver != null) {
-                driver.manage().deleteAllCookies();
-                driver.quit();
-                driver = null;
+    private Thread afterAllThread() {
+        return new Thread(() -> {
+            if (Platform.WEB.equals(ConfigUtils.getPlatform())) {
+                SeleniumStandaloneServer.SERVER.stop();
             }
-        }
+        });
     }
 }

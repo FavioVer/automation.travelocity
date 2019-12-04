@@ -1,6 +1,8 @@
 package com.travelocity.pageobjects;
 
+import com.travelocity.constants.AppNames;
 import com.travelocity.framework.ui.page.web.WebPage;
+import com.travelocity.framework.utils.ConfigUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +34,11 @@ public class TravelocityHomePage extends WebPage {
     @Override
     protected By getPageLocator() {
         return By.id(COPYRIGHT_FOOTER_ID);
+    }
+
+    @Override
+    protected void loadOwnUrl() {
+        setOwnUrl(AppNames.TRAVELOCITY_HOME_NAME + "." + ConfigUtils.getEnvironment());
     }
 
     public boolean isAccountMenuButtonForLoggedUserVisible() {
