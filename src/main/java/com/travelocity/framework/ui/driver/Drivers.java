@@ -50,9 +50,9 @@ public final class Drivers implements Loggable {
         }
     }
 
-    private static WebDriver setupWebDriverForWeb(Browsers browsers) throws MalformedURLException {
+    private static WebDriver setupWebDriverForWeb(Browsers browsers) {
         WebDriver webdriver;
-        webdriver = new RemoteWebDriver(new URL(UIConfigLoader.CONFIG.getRemoteServerURL()), browsers.getCapabilities());
+        webdriver = new RemoteWebDriver(browsers.getCapabilities());
         webdriver.manage().timeouts().pageLoadTimeout(UIConfigLoader.CONFIG.getPageLoadTimeout(), SECONDS)
                 .setScriptTimeout(UIConfigLoader.CONFIG.getScriptTimeout(), SECONDS)
                 .implicitlyWait(UIConfigLoader.CONFIG.getImplicitWait(), SECONDS);

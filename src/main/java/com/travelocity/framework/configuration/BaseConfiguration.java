@@ -5,10 +5,11 @@ import org.apache.commons.lang3.StringUtils;
 
 public class BaseConfiguration implements Configurable {
 
-    @JsonProperty
+    @JsonProperty("baseURL")
     private String baseURL = StringUtils.EMPTY;
 
     @Override
+    @JsonProperty("baseURL")
     public String getBaseURL() {
         return baseURL;
     }

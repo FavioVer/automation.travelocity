@@ -18,7 +18,7 @@ public enum UIConfigLoader implements UIConfigurable, Loggable {
 
     UIConfigLoader() {
         String file = ConfigUtils.getConfigFileNameByType(ConfigFile.UI);
-        Optional<UIConfiguration> configData = FileUtils.loadFromYML(file, UIConfiguration.class);
+        Optional<UIConfiguration> configData = FileUtils.loadFromJson(file, UIConfiguration.class);
         if (configData.isPresent()) {
             Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(Level.INFO, "Initializing framework configData for services...");
             this.config = configData.get();

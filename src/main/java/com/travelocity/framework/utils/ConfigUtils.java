@@ -15,6 +15,7 @@ public class ConfigUtils implements Loggable {
     private static final String DEFAULT_ENVIRONMENT = "automation";
     private static final String PLATFORM = "platform";
     private static final String BROWSER = "browser";
+    private static final String CONFIG_FILE_SUFFIX = "config";
 
     private ConfigUtils() {
     }
@@ -28,7 +29,7 @@ public class ConfigUtils implements Loggable {
     }
 
     public static String getConfigFileNameByType(ConfigFile fileType) {
-        return String.format("%s-%s", fileType.getValue(), getEnvironment());
+        return String.format("%s-%s-%s", fileType.getValue(), getEnvironment(), CONFIG_FILE_SUFFIX);
     }
 
     public static String getEnvironment() {

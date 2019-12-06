@@ -1,12 +1,14 @@
 package com.travelocity.framework.ui.config;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.travelocity.framework.configuration.BaseConfiguration;
 import com.travelocity.framework.logger.Loggable;
 
 
 public class UIConfiguration extends BaseConfiguration implements UIConfigurable, Loggable {
 
+    @JsonProperty("remoteServerURL")
     private String remoteServerURL;
 
     private String appiumURL;
@@ -21,6 +23,7 @@ public class UIConfiguration extends BaseConfiguration implements UIConfigurable
 
     private Integer scriptTimeout;
 
+    @JsonProperty("remoteServerURL")
     public String getRemoteServerURL() {
         return remoteServerURL;
     }
