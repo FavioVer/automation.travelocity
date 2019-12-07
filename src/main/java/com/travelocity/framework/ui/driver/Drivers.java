@@ -6,6 +6,12 @@ import com.travelocity.framework.ui.config.UIConfigLoader;
 import com.travelocity.framework.ui.platform.Platform;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -44,7 +50,7 @@ public final class Drivers implements Loggable {
                     webdriver = setupWebDriverForWeb(browsers);
                     break;
                 default:
-                    webdriver = new RemoteWebDriver((URL) null, null);
+                    webdriver = setupRemoteWebDriverForWeb(browsers);
             }
             DRIVERS_CONSTANT.set(new Driver(platform, browsers, webdriver));
         }
@@ -52,7 +58,7 @@ public final class Drivers implements Loggable {
 
     private static WebDriver setupWebDriverForWeb(Browsers browsers) {
         WebDriver webdriver;
-        webdriver = new RemoteWebDriver(browsers.getCapabilities());
+        webdriver = setupWebDriverForWebByBrowser(browsers);
         webdriver.manage().timeouts().pageLoadTimeout(UIConfigLoader.CONFIG.getPageLoadTimeout(), SECONDS)
                 .setScriptTimeout(UIConfigLoader.CONFIG.getScriptTimeout(), SECONDS)
                 .implicitlyWait(UIConfigLoader.CONFIG.getImplicitWait(), SECONDS);
@@ -60,6 +66,23 @@ public final class Drivers implements Loggable {
         webdriver.get(UIConfigLoader.CONFIG.getBaseURL());
         return webdriver;
     }
+
+    private static WebDriver setupRemoteWebDriverForWeb(Browsers browsers) throws MalformedURLException {
+        return new RemoteWebDriver(new URL(UIConfigLoader.CONFIG.getRemoteServerURL()), browsers.getCapabilities());
+    }
+
+    private static WebDriver setupWebDriverForWebByBrowser(Browsers browsers) {
+
+        switch (browsers) {
+            case FIREFOX:
+                return new FirefoxDriver(new FirefoxOptions(browsers.getCapabilities()));
+            case IE:
+                return new InternetExplorerDriver(new InternetExplorerOptions(browsers.getCapabilities()));
+            default:
+                return new ChromeDriver((ChromeOptions) browsers.getCapabilities());
+        }
+    }
+
 
     /**
      * Gets the instance previously created and stored at thread-level of the getDriver.
