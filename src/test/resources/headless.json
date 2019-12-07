@@ -1,0 +1,7 @@
+{
+  "capabilities": {
+    "version": "automation",
+    "arguments": "headless,disable-gpu,remote-debugging-port=25777,disable-infobars,no-sandbox,disable-extensions,disable-dev-shm-usage,proxy-server=\\'direct://\\',proxy-bypass-list=*,whitelisted-ips",
+    "lang": "en"
+  }
+}

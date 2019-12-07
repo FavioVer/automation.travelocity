@@ -10,7 +10,7 @@ import java.util.Optional;
 
 
 /**
- * CapabilitiesLoader loads a set of optional capabilities (could be empty) specified in a YAML file per browser or device.
+ * CapabilitiesLoader loads a set of optional capabilities (could be empty) specified in a JSON file per browser or device.
  */
 public enum CapabilitiesLoader implements Loggable {
 

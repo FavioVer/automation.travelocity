@@ -24,7 +24,7 @@ import static org.openqa.selenium.remote.DesiredCapabilities.iphone;
 public enum Browsers implements GetCapabilities {
 
     CHROME {
-        public Capabilities getCapabilities() {
+        public ChromeOptions getCapabilities() {
             if (!BINARY_DOWNLOADED.contains(CHROME)) {
                 chromedriver().setup();
                 BINARY_DOWNLOADED.add(CHROME);
@@ -47,7 +47,7 @@ public enum Browsers implements GetCapabilities {
     },
     FIREFOX {
         @Override
-        public Capabilities getCapabilities() {
+        public FirefoxOptions getCapabilities() {
             if (!BINARY_DOWNLOADED.contains(FIREFOX)) {
                 firefoxdriver().setup();
                 BINARY_DOWNLOADED.add(FIREFOX);
@@ -58,7 +58,7 @@ public enum Browsers implements GetCapabilities {
     },
     IE {
         @Override
-        public Capabilities getCapabilities() {
+        public InternetExplorerOptions getCapabilities() {
             if (!BINARY_DOWNLOADED.contains(IE)) {
                 iedriver().setup();
                 BINARY_DOWNLOADED.add(IE);

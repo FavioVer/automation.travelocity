@@ -1,0 +1,4 @@
+capabilities:
+  version: automation
+  arguments: incognito,disable-notifications
+  lang: en
