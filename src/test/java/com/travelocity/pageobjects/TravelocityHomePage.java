@@ -1,11 +1,13 @@
 package com.travelocity.pageobjects;
 
 import com.travelocity.constants.AppNames;
+import com.travelocity.framework.configuration.ExecutionPropertiesProvider;
 import com.travelocity.framework.ui.page.web.WebPage;
-import com.travelocity.framework.utils.ConfigUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.io.IOException;
 
 public class TravelocityHomePage extends WebPage {
 
@@ -27,7 +29,7 @@ public class TravelocityHomePage extends WebPage {
     @FindBy(id = CREATE_ACCOUNT_ID)
     private WebElement createAccountOption;
 
-    public TravelocityHomePage() {
+    public TravelocityHomePage() throws IOException {
         super();
     }
 
@@ -37,8 +39,8 @@ public class TravelocityHomePage extends WebPage {
     }
 
     @Override
-    protected void loadOwnUrl() {
-        setOwnUrl(AppNames.TRAVELOCITY_HOME_NAME + "." + ConfigUtils.getEnvironment());
+    protected void loadOwnUrl() throws IOException {
+        setOwnUrl(ExecutionPropertiesProvider.getPropertyValue(AppNames.TRAVELOCITY_HOME_NAME));
     }
 
     public boolean isAccountMenuButtonForLoggedUserVisible() {

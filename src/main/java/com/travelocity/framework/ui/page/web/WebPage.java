@@ -4,13 +4,15 @@ import com.travelocity.framework.ui.driver.Driver;
 import com.travelocity.framework.ui.driver.Drivers;
 import org.openqa.selenium.By;
 
+import java.io.IOException;
+
 import static org.openqa.selenium.support.PageFactory.initElements;
 
 public abstract class WebPage extends WebOperations {
 
     private String ownUrl;
 
-    protected WebPage() {
+    protected WebPage() throws IOException {
         Driver driver = Drivers.getDriver();
         initElements(driver.getWebDriver(), this);
         loadOwnUrl();
@@ -20,15 +22,15 @@ public abstract class WebPage extends WebOperations {
         Drivers.getDriver().getWebDriver().get(url);
     }
 
-    public String getOwnUrl(){
+    public String getOwnUrl() {
         return this.ownUrl;
     }
 
-    protected void setOwnUrl(String url){
+    protected void setOwnUrl(String url) {
         this.ownUrl = url;
     }
 
-    protected abstract void loadOwnUrl();
+    protected abstract void loadOwnUrl() throws IOException;
 
     protected abstract By getPageLocator();
 

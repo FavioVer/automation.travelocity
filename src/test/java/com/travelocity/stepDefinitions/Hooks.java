@@ -4,6 +4,7 @@ import com.travelocity.framework.ui.driver.Drivers;
 import com.travelocity.framework.ui.platform.Platform;
 import com.travelocity.framework.ui.server.SeleniumStandaloneServer;
 import com.travelocity.framework.utils.ConfigUtils;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 import java.net.MalformedURLException;
@@ -31,5 +32,11 @@ public class Hooks {
                 SeleniumStandaloneServer.SERVER.stop();
             }
         });
+    }
+
+    @After
+    public void after() {
+        Runtime.getRuntime().addShutdownHook(afterAllThread());
+        Drivers.dispose();
     }
 }

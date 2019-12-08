@@ -7,6 +7,8 @@ import io.cucumber.java.en.When;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.EncryptedDocumentException;
 
+import java.io.IOException;
+
 import static org.junit.Assert.assertTrue;
 
 public class BasicStepsDefinitions {
@@ -15,7 +17,7 @@ public class BasicStepsDefinitions {
 
 
     @Given("^I am on the Travelocity Home page$")
-    public void goToTravelocityHomePage() throws EncryptedDocumentException {
+    public void goToTravelocityHomePage() throws EncryptedDocumentException, IOException {
         travelocityHomePage = new TravelocityHomePage();
         travelocityHomePage.goToPageURL(travelocityHomePage.getOwnUrl());
         assertTrue("Travelocity home has loaded properly", travelocityHomePage.isLoaded());

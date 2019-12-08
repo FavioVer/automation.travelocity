@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Context {
 
     private static Context instance;
-    private String ENVIRONMENT = Objects.requireNonNull(ExecutionPropertiesProvider.getString("environment")).replaceAll(" ", "");
+    private String ENVIRONMENT = Objects.requireNonNull(ExecutionPropertiesProvider.getPropertyValue("environment")).replaceAll(" ", "");
 
     private Context() throws IOException {
     }

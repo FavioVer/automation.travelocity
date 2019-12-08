@@ -7,10 +7,13 @@ import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
+import com.travelocity.framework.exceptions.DirOrFileNotFoundException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Optional;
+import java.util.Properties;
 
 import static java.lang.Thread.currentThread;
 import static java.util.Optional.empty;
@@ -45,6 +48,17 @@ public final class FileUtils {
             return Optional.of(obj);
         } catch (IOException e) {
             return empty();
+        }
+    }
+
+    public static Properties loadFromProperties(String file) throws IOException {
+        Properties properties = new Properties();
+        try (InputStream input = currentThread().getContextClassLoader()
+                .getResourceAsStream(file + ".properties")) {
+            properties.load(input);
+            return properties;
+        } catch (NullPointerException | FileNotFoundException e) {
+            throw new DirOrFileNotFoundException(e.getMessage());
         }
     }
 }
