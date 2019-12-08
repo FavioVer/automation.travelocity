@@ -16,7 +16,7 @@ public class BasicStepsDefinitions {
     private TravelocityHomePage travelocityHomePage;
 
 
-    @Given("^I am on the Travelocity Home page$")
+    @Given("I am on the Travelocity Home page")
     public void goToTravelocityHomePage() throws EncryptedDocumentException, IOException {
         travelocityHomePage = new TravelocityHomePage();
         travelocityHomePage.goToPageURL(travelocityHomePage.getOwnUrl());
@@ -24,48 +24,48 @@ public class BasicStepsDefinitions {
     }
 
 
-    @Given("^I am not logged in Travelocity$")
+    @Given("I am not logged in Travelocity")
     public void getNotLoggedUser() throws EncryptedDocumentException {
     }
 
-    @When("^I click on the account menu for not logged users$")
+    @When("I click on the account menu for not logged users")
     public void clickOnTheAccountMenuForNotLoggedUsers()
             throws EncryptedDocumentException {
         assertTrue("User cannot see the account menu option for the not logged users",
                 travelocityHomePage.isAccountMenuButtonVisible());
     }
 
-    @Then("^I should be able to see the create account option$")
+    @Then("I should be able to see the create account option")
     public void verifyUserCanSeeCreateAccountOption()
             throws EncryptedDocumentException {
         assertTrue("User cannot see the option to create an account",
                 travelocityHomePage.isAccountMenuButtonVisible());
     }
 
-    @When("^click on the available option to log in from the account menu$")
+    @When("I click on the available option to log in from the account menu")
     public void selectAvailableLogInOptionFromAccountMenu() throws EncryptedDocumentException {
 
     }
 
-    @When("^enter a username as \"([^\\\"]*)\" on the user field$")
+    @When("I enter a username as {string} on the user field")
     public void enterUsernameAs(String user) throws EncryptedDocumentException {
         assertTrue("User was not entered correctly", StringUtils.isNotBlank(user));
     }
 
 
-    @When("^enter a password as \"([^\\\"]*)\" on the password field$")
+    @When("I enter a password as {string} on the password field")
     public void enterPasswordAs(String password)
             throws EncryptedDocumentException {
         assertTrue("User was not entered correctly", StringUtils.isNotBlank(password));
     }
 
 
-    @When("^I click on the login option$")
+    @When("I click on the login option")
     public void clickOnTheLoginOption() throws EncryptedDocumentException {
 
     }
 
-    @Then("^I should be able to see the account menu option for my logged user$")
+    @Then("I should be able to see the account menu option for my logged user")
     public void verifyUserCanSeeAccountMenuForLoggedUser() {
         assertTrue("User can not see the account menu for their logged user",
                 travelocityHomePage.isAccountMenuButtonForLoggedUserVisible());
