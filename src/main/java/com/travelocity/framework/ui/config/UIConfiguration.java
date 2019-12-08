@@ -1,7 +1,6 @@
 package com.travelocity.framework.ui.config;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.travelocity.framework.configuration.BaseConfiguration;
 import com.travelocity.framework.logger.Loggable;
 

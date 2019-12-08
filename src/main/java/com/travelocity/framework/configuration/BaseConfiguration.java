@@ -1,16 +1,14 @@
 package com.travelocity.framework.configuration;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.apache.commons.lang3.StringUtils;
-
 public class BaseConfiguration implements Configurable {
 
-    @JsonProperty("baseURL")
-    private String baseURL = StringUtils.EMPTY;
+    private String baseURL;
 
-    @Override
-    @JsonProperty("baseURL")
     public String getBaseURL() {
         return baseURL;
+    }
+
+    public void setBaseURL(String baseURL) {
+        this.baseURL = baseURL;
     }
 }

@@ -1,8 +1,8 @@
 baseURL: https://www.google.com
 remoteServerURL: http://localhost:4444/wd/hub
-pageLoadTimeout: 60
 appiumURL: https://www.google.com
 implicitWait: 5
 explicitWait: 5
 pollingEvery: 2
+pageLoadTimeout: 60
 scriptTimeout: 2
