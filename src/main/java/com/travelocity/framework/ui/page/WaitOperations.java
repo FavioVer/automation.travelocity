@@ -151,4 +151,8 @@ public abstract class WaitOperations implements Loggable {
     private WebDriverWait getWebDriverWait() {
         return Drivers.getDriver().getWebDriverWait();
     }
+
+    public boolean waitForUrlToContain(String url) {
+        return getWebDriverWait().until(ExpectedConditions.urlContains(url));
+    }
 }

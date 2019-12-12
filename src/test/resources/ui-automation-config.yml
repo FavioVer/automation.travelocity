@@ -1,6 +1,6 @@
-baseURL: https://www.google.com
+baseURL: https://www.travelocity.com
 remoteServerURL: http://localhost:4444/wd/hub
-appiumURL: https://www.google.com
+appiumURL: https://www.travelocity.com
 implicitWait: 5
 explicitWait: 5
 pollingEvery: 2

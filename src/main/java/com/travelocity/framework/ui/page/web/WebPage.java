@@ -20,6 +20,7 @@ public abstract class WebPage extends WebOperations {
 
     public void goToPageURL(String url) {
         Drivers.getDriver().getWebDriver().get(url);
+        waitForUrlToContain(url);
     }
 
     public String getOwnUrl() {

@@ -63,7 +63,6 @@ public final class Drivers implements Loggable {
                 .setScriptTimeout(UIConfigLoader.CONFIG.getScriptTimeout(), SECONDS)
                 .implicitlyWait(UIConfigLoader.CONFIG.getImplicitWait(), SECONDS);
         webdriver.manage().window().maximize();
-        webdriver.get(UIConfigLoader.CONFIG.getBaseURL());
         return webdriver;
     }
 
