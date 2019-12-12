@@ -9,11 +9,15 @@ import com.jayway.jsonpath.spi.json.JacksonJsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import com.travelocity.framework.exceptions.DirOrFileNotFoundException;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.lang.Thread.currentThread;
 import static java.util.Optional.empty;
@@ -60,5 +64,16 @@ public final class FileUtils {
         } catch (NullPointerException | FileNotFoundException e) {
             throw new DirOrFileNotFoundException(e.getMessage());
         }
+    }
+
+    public static void setDownloadDirectoryForFile(File tempDir) {
+        if (!tempDir.exists()) {
+            try {
+                Files.createDirectories(tempDir.toPath());
+            } catch (IOException e) {
+                Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).log(Level.SEVERE, e.getMessage());
+            }
+        }
+        System.setProperty("wdm.targetPath", tempDir.getAbsolutePath());
     }
 }

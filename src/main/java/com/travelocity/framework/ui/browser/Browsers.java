@@ -1,6 +1,7 @@
 package com.travelocity.framework.ui.browser;
 
 import com.travelocity.framework.ui.driver.capabilities.CapabilitiesLoader;
+import com.travelocity.framework.utils.ConfigUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,6 +24,7 @@ import static org.openqa.selenium.remote.DesiredCapabilities.iphone;
  */
 public enum Browsers implements GetCapabilities {
 
+
     CHROME {
         public ChromeOptions getCapabilities() {
             if (!BINARY_DOWNLOADED.contains(CHROME)) {
@@ -31,10 +33,14 @@ public enum Browsers implements GetCapabilities {
             }
 
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-            Map<String, String> extraCapabilities = CapabilitiesLoader.CAPABILITIES.readCapabilities("headless");
-            String[] arguments = String.valueOf(extraCapabilities.get(ARGUMENTS)).split(",");
-            extraCapabilities.remove(ARGUMENTS);
-            extraCapabilities.forEach(capabilities::setCapability);
+
+            String[] arguments = new String[0];
+            if (IS_HEADLESS) {
+                Map<String, String> extraCapabilities = CapabilitiesLoader.CAPABILITIES.readCapabilities("headless");
+                arguments = String.valueOf(extraCapabilities.get(ARGUMENTS)).split(",");
+                extraCapabilities.remove(ARGUMENTS);
+                extraCapabilities.forEach(capabilities::setCapability);
+            }
 
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.merge(capabilities);
@@ -84,6 +90,7 @@ public enum Browsers implements GetCapabilities {
     };
 
     private static final String ARGUMENTS = "arguments";
+    private static final boolean IS_HEADLESS = Boolean.parseBoolean(ConfigUtils.getPropertyValue("headless"));
 
     private static final List<Browsers> BINARY_DOWNLOADED = synchronizedList(new ArrayList());
 

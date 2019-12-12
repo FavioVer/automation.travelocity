@@ -20,7 +20,7 @@ public class ConfigUtils implements Loggable {
     private ConfigUtils() {
     }
 
-    private static String getPropertyValue(String key) {
+    public static String getPropertyValue(String key) {
         String property = getProperty(key);
         if (property == null) {
             property = getenv(key);
