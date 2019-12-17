@@ -4,6 +4,7 @@ import com.travelocity.pageobjects.TravelocityHomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java8.En;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.EncryptedDocumentException;
 
@@ -11,12 +12,17 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
 
-public class BasicStepsDefinitions {
+public class BasicStepsDefinitions implements En {
 
     private TravelocityHomePage travelocityHomePage;
 
+    public BasicStepsDefinitions() {
+        Given("I am on the Travelocity Home page", () -> {
+            goToTravelocityHomePage();
+        });
 
-    @Given("I am on the Travelocity Home page")
+    }
+
     public void goToTravelocityHomePage() throws EncryptedDocumentException, IOException {
         travelocityHomePage = new TravelocityHomePage();
         travelocityHomePage.goToPageURL(travelocityHomePage.getOwnUrl());
