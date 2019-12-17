@@ -1,4 +1,4 @@
 capabilities:
   version: automation
-  arguments: incognito,disable-notifications
+  arguments: incognito,disable-notifications,disable-infobars,no-sandbox,disable-extensions,disable-dev-shm-usage
   lang: en

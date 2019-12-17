@@ -116,13 +116,20 @@
             <version>2.4.0-b180725.0644</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java8 -->
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>4.7.2</version>
+            <artifactId>cucumber-java8</artifactId>
+            <version>4.8.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber4-jvm -->
         <dependency>
