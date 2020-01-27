@@ -3,10 +3,12 @@ package com.travelocity.framework.webdriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import java.io.File;
+import java.util.Collections;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
@@ -22,7 +24,7 @@ public class WebDriverFactory {
     }
 
     public static WebDriver generateDriver() {
-        WebDriver driver = null;
+        WebDriver driver;
         WebdriverConfig config = ConfigFactory.create(WebdriverConfig.class);
         String browser = config.browser().toUpperCase();
         switch (browser) {
@@ -42,6 +44,9 @@ public class WebDriverFactory {
                 break;
             default:
                 System.setProperty("webdriver.chrome.driver", config.chromeDriver());
+                ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+                options.setExperimentalOption("useAutomationExtension", false);
                 driver = new ChromeDriver();
                 break;
         }

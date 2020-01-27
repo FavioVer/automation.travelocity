@@ -9,13 +9,13 @@ import io.cucumber.junit.Cucumber;
 
 		glue = { "com.travelocity.stepDefinitions" },
 
-		tags = { "@HomePage or @Login" },
+		tags = { "@HotelSection" },
 
 		plugin = { "pretty", "json:target/cucumber-reports.json", "html:target/cucumber-reports",
 				"io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm" },
 
 		monochrome = true)
 
-public class JunitRunner {
+public class SmokeTest {
 
 }
